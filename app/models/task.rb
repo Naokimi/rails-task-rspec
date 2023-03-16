@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
   validates :title, :description, presence: true
 
-  def short_description
-    description.length > 50 ? description[0..50] : description
+  def truncated_description
+    description.length > 10 ? "#{description[0..10]}..." : description
   end
 end
